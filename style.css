@@ -270,3 +270,16 @@ html {
 .hero {
   margin-top: 40px;
 }
+
+.buttons {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* центр по горизонтали */
+  gap: 15px; /* расстояние между кнопками */
+}
+
+.big-download, .secondary {
+  width: 260px; /* одинаковая ширина */
+  text-align: center;
+}
