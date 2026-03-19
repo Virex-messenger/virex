@@ -16,19 +16,6 @@ body {
   color: white;
 }
 
-/* GLOW */
-.glow {
-  position: fixed;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, orange, transparent 70%);
-  filter: blur(150px);
-  opacity: 0.3;
-  top: 20%;
-  left: 20%;
-  z-index: -1;
-}
-
 /* HEADER */
 header {
   display: flex;
@@ -36,24 +23,12 @@ header {
   padding: 20px 40px;
   position: fixed;
   width: 100%;
-  backdrop-filter: blur(20px);
   background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
 }
 
 .logo {
   font-weight: 600;
-  font-size: 18px;
-}
-
-/* NAV */
-nav a {
-  margin-left: 25px;
-  color: #aaa;
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: white;
 }
 
 /* HERO */
@@ -77,34 +52,17 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
-.hero p {
-  margin-top: 15px;
-  color: #aaa;
-}
-
 /* BUTTONS */
-.buttons {
-  margin-top: 30px;
-}
-
 .btn {
-  padding: 15px 30px;
-  margin-right: 10px;
-  border-radius: 14px;
+  padding: 14px 28px;
+  border-radius: 12px;
   text-decoration: none;
-  transition: 0.3s;
+  margin-top: 20px;
+  display: inline-block;
 }
 
 .primary {
   background: linear-gradient(90deg, orange, purple);
-}
-
-.secondary {
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-.btn:hover {
-  transform: scale(1.05);
 }
 
 /* PHONE */
@@ -114,20 +72,45 @@ h1 {
   background: #111;
   border-radius: 40px;
   padding: 10px;
-  box-shadow: 0 0 40px rgba(0,0,0,0.6);
-  transform: rotate(-5deg);
 }
 
 .screen {
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  background: linear-gradient(180deg, #222, #000);
+  background: #000;
+  padding: 15px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  color: #aaa;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* CHAT */
+.msg {
+  padding: 10px 14px;
+  border-radius: 14px;
+  max-width: 75%;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: show 0.5s forwards;
+}
+
+.left {
+  background: #222;
+  align-self: flex-start;
+}
+
+.right {
+  background: linear-gradient(90deg, orange, purple);
+  align-self: flex-end;
+}
+
+/* ANIMATION */
+@keyframes show {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* SECTIONS */
@@ -135,73 +118,58 @@ section {
   padding: 120px 20px;
   text-align: center;
 }
-
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  padding: 25px;
-  border-radius: 16px;
-  width: 250px;
-}
-
-/* SMOOTH */
-html {
-  scroll-behavior: smooth;
-}
 </style>
 </head>
 
 <body>
 
-<div class="glow"></div>
-
 <header>
-  <div class="logo">
-    <strong>Virex</strong>
-  </div>
-
-  <nav>
-    <a href="#download">Download</a>
-    <a href="#about">About</a>
-  </nav>
+  <div class="logo">Virex</div>
 </header>
 
 <div class="hero">
+
   <div class="hero-text">
     <h1>Virex</h1>
-    <p>The next generation messenger with speed, privacy and beauty.</p>
-
-    <div class="buttons">
-      <a href="#" class="btn primary">Download APK</a>
-      <a href="#" class="btn secondary">Open Web</a>
-    </div>
+    <p>Modern messenger with real-time communication</p>
+    <a href="#" class="btn primary">Download APK</a>
   </div>
 
   <div class="phone">
-    <div class="screen">App UI</div>
+    <div class="screen" id="chat"></div>
   </div>
+
 </div>
 
-<section id="about">
-  <h2>Why Virex</h2>
+<script>
+const messages = [
+  { text: "Hey, what is Virex?", side: "left" },
+  { text: "It's a new messenger 🚀", side: "right" },
+  { text: "Is it fast?", side: "left" },
+  { text: "Super fast ⚡ and smooth", side: "right" },
+  { text: "Looks really nice 👀", side: "left" },
+  { text: "Yeah, modern UI and secure 🔒", side: "right" }
+];
 
-  <div class="features">
-    <div class="card">⚡ Ultra fast</div>
-    <div class="card">🔒 End-to-end encryption</div>
-    <div class="card">🎨 Premium experience</div>
-  </div>
-</section>
+const chat = document.getElementById("chat");
 
-<section id="download">
-  <h2>Download</h2>
-  <a href="#" class="btn primary">Download APK</a>
-</section>
+let i = 0;
+
+function showMessage() {
+  if (i >= messages.length) return;
+
+  const msg = document.createElement("div");
+  msg.className = "msg " + messages[i].side;
+  msg.innerText = messages[i].text;
+
+  chat.appendChild(msg);
+
+  i++;
+  setTimeout(showMessage, 800);
+}
+
+showMessage();
+</script>
 
 </body>
 </html>
