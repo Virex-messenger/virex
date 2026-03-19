@@ -17,16 +17,16 @@ body {
   overflow-x: hidden;
 }
 
-/* GLOW BACKGROUND */
+/* GLOW */
 .glow {
   position: fixed;
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
   background: radial-gradient(circle, orange, transparent 70%);
-  filter: blur(120px);
-  opacity: 0.4;
+  filter: blur(150px);
+  opacity: 0.3;
   top: 20%;
-  left: 30%;
+  left: 20%;
   z-index: -1;
 }
 
@@ -56,7 +56,6 @@ nav a {
   margin-left: 25px;
   color: #aaa;
   text-decoration: none;
-  transition: 0.3s;
 }
 
 nav a:hover {
@@ -67,28 +66,26 @@ nav a:hover {
 .hero {
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 10%;
 }
 
-/* PARALLAX */
-.hero-content {
-  text-align: center;
-  transform-style: preserve-3d;
-  transition: transform 0.1s;
+/* TEXT */
+.hero-text {
+  max-width: 500px;
 }
 
 h1 {
-  font-size: 90px;
+  font-size: 70px;
   background: linear-gradient(90deg, orange, purple);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-p {
+.hero p {
+  margin-top: 15px;
   color: #aaa;
-  margin-top: 10px;
 }
 
 /* BUTTONS */
@@ -98,11 +95,10 @@ p {
 
 .btn {
   padding: 15px 30px;
-  margin: 10px;
+  margin-right: 10px;
   border-radius: 14px;
   text-decoration: none;
   transition: 0.3s;
-  position: relative;
 }
 
 .primary {
@@ -116,6 +112,28 @@ p {
 
 .btn:hover {
   transform: scale(1.1);
+}
+
+/* PHONE MOCKUP */
+.phone {
+  width: 260px;
+  height: 520px;
+  background: #111;
+  border-radius: 40px;
+  padding: 10px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  transform: rotate(-5deg);
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #222, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
 }
 
 /* SECTIONS */
@@ -132,7 +150,7 @@ section.visible {
   transform: translateY(0);
 }
 
-/* CARDS */
+/* FEATURES */
 .features {
   display: flex;
   justify-content: center;
@@ -177,24 +195,28 @@ html {
 </header>
 
 <div class="hero">
-  <div class="hero-content" id="hero">
+  <div class="hero-text">
     <h1>Virex</h1>
-    <p>Next generation messaging platform</p>
+    <p>The next generation messenger with speed, privacy and beauty.</p>
 
     <div class="buttons">
       <a href="#" class="btn primary">Download APK</a>
       <a href="#" class="btn secondary">Open Web</a>
     </div>
   </div>
+
+  <div class="phone">
+    <div class="screen">Virex UI</div>
+  </div>
 </div>
 
 <section id="about">
-  <h2>About</h2>
+  <h2>Why Virex</h2>
 
   <div class="features">
-    <div class="card">⚡ Lightning fast</div>
-    <div class="card">🔒 Private & secure</div>
-    <div class="card">🎨 Premium UI</div>
+    <div class="card">⚡ Ultra fast</div>
+    <div class="card">🔒 End-to-end encryption</div>
+    <div class="card">🎨 Premium experience</div>
   </div>
 </section>
 
@@ -204,7 +226,6 @@ html {
 </section>
 
 <script>
-/* SCROLL */
 const sections = document.querySelectorAll("section");
 
 window.addEventListener("scroll", () => {
@@ -214,16 +235,6 @@ window.addEventListener("scroll", () => {
       sec.classList.add("visible");
     }
   });
-});
-
-/* PARALLAX */
-const hero = document.getElementById("hero");
-
-document.addEventListener("mousemove", (e) => {
-  let x = (window.innerWidth / 2 - e.clientX) / 25;
-  let y = (window.innerHeight / 2 - e.clientY) / 25;
-
-  hero.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
 });
 </script>
 
