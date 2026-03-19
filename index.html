@@ -5,236 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Virex</title>
 
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #050505;
-  color: white;
-}
-
-/* HEADER */
-header {
-  padding: 20px 40px;
-  position: fixed;
-  width: 100%;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  z-index: 10;
-}
-
-.logo {
-  font-weight: 600;
-}
-
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10%;
-}
-
-/* TEXT */
-.hero-text {
-  max-width: 520px;
-}
-
-h1 {
-  font-size: 72px;
-  line-height: 1.05;
-  background: linear-gradient(90deg, orange, purple);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-  margin-top: 16px;
-  color: #aaa;
-}
-
-/* BUTTONS */
-.buttons {
-  margin-top: 30px;
-}
-
-/* BIG DOWNLOAD BUTTON */
-.big-download {
-  display: inline-block;
-  padding: 22px 50px;
-  font-size: 20px;
-  font-weight: 600;
-  border-radius: 20px;
-  background: linear-gradient(90deg, orange, purple);
-  box-shadow: 0 0 40px rgba(255, 120, 0, 0.8);
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-
-.big-download:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 60px rgba(255, 120, 0, 1);
-}
-
-/* shine effect */
-.big-download::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: 0.5s;
-}
-
-.big-download:hover::before {
-  left: 100%;
-}
-
-/* secondary button */
-.secondary {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.2);
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-.secondary:hover {
-  background: rgba(255,255,255,0.05);
-  transform: scale(1.05);
-}
-
-/* PHONE */
-.phone {
-  width: 260px;
-  height: 520px;
-  background: #111;
-  border-radius: 40px;
-  padding: 10px;
-  box-shadow: 0 0 40px rgba(0,0,0,0.7);
-}
-
-.screen {
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  background: #000;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  overflow: hidden;
-}
-
-/* CHAT */
-.msg {
-  padding: 10px 14px;
-  border-radius: 14px;
-  max-width: 75%;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: show 0.5s forwards;
-}
-
-.left {
-  background: #222;
-  align-self: flex-start;
-}
-
-.right {
-  background: linear-gradient(90deg, orange, purple);
-  align-self: flex-end;
-}
-
-@keyframes show {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* SECTION */
-section {
-  padding: 120px 20px;
-  text-align: center;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-</style>
 </head>
 
 <body>
 
-<header>
+<header class="header">
   <div class="logo">Virex</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#download">Download</a>
+  </nav>
 </header>
 
-<div class="hero">
-
+<section class="hero">
   <div class="hero-text">
-    <h1>Virex</h1>
-    <p>Modern messenger with real-time communication</p>
+    <h1 class="reveal">Virex</h1>
+    <p class="reveal">Next-gen messenger with speed and privacy</p>
 
-    <div class="buttons">
-      <a href="#" class="big-download">Download Virex APK</a>
-      <br>
-      <a href="#" class="secondary">Open Web Version</a>
+    <div class="buttons reveal">
+      <a href="#" class="big-download">Download APK</a>
+      <a href="#" class="secondary">Web Version</a>
     </div>
   </div>
 
-  <div class="phone">
+  <div class="phone reveal">
     <div class="screen" id="chat"></div>
   </div>
-
-</div>
-
-<section id="about">
-  <h2>Fast. Secure. Beautiful.</h2>
 </section>
 
-<script>
-const messages = [
-  { text: "Hey, what is Virex?", side: "left" },
-  { text: "It's a modern messenger 🚀", side: "right" },
-  { text: "Is it fast?", side: "left" },
-  { text: "Super fast ⚡ and smooth", side: "right" },
-  { text: "Looks really cool 👀", side: "left" },
-  { text: "Secure and beautiful 🔒", side: "right" }
-];
+<section id="about" class="section">
+  <h2 class="reveal">Why Virex</h2>
 
-const chat = document.getElementById("chat");
+  <div class="cards">
+    <div class="card reveal">⚡ Ultra fast</div>
+    <div class="card reveal">🔒 Secure</div>
+    <div class="card reveal">🎨 Beautiful UI</div>
+  </div>
+</section>
 
-let i = 0;
+<section id="download" class="section">
+  <h2 class="reveal">Download</h2>
+  <a href="#" class="big-download reveal">Download Virex</a>
+</section>
 
-function showMessage() {
-  if (i >= messages.length) return;
-
-  const msg = document.createElement("div");
-  msg.className = "msg " + messages[i].side;
-  msg.innerText = messages[i].text;
-
-  chat.appendChild(msg);
-
-  i++;
-  setTimeout(showMessage, 800);
-}
-
-showMessage();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
