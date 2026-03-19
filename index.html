@@ -18,8 +18,6 @@ body {
 
 /* HEADER */
 header {
-  display: flex;
-  justify-content: space-between;
   padding: 20px 40px;
   position: fixed;
   width: 100%;
@@ -52,17 +50,36 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
+.hero p {
+  margin-top: 15px;
+  color: #aaa;
+}
+
 /* BUTTONS */
+.buttons {
+  margin-top: 25px;
+}
+
 .btn {
   padding: 14px 28px;
   border-radius: 12px;
   text-decoration: none;
-  margin-top: 20px;
+  margin-right: 10px;
   display: inline-block;
+  transition: 0.3s;
 }
 
 .primary {
   background: linear-gradient(90deg, orange, purple);
+}
+
+.secondary {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 /* PHONE */
@@ -105,7 +122,6 @@ h1 {
   align-self: flex-end;
 }
 
-/* ANIMATION */
 @keyframes show {
   to {
     opacity: 1;
@@ -113,7 +129,7 @@ h1 {
   }
 }
 
-/* SECTIONS */
+/* SECTION */
 section {
   padding: 120px 20px;
   text-align: center;
@@ -132,7 +148,11 @@ section {
   <div class="hero-text">
     <h1>Virex</h1>
     <p>Modern messenger with real-time communication</p>
-    <a href="#" class="btn primary">Download APK</a>
+
+    <div class="buttons">
+      <a href="#" class="btn primary">Download APK</a>
+      <a href="#" class="btn secondary">Open Web Version</a>
+    </div>
   </div>
 
   <div class="phone">
@@ -144,11 +164,11 @@ section {
 <script>
 const messages = [
   { text: "Hey, what is Virex?", side: "left" },
-  { text: "It's a new messenger 🚀", side: "right" },
+  { text: "It's a modern messenger 🚀", side: "right" },
   { text: "Is it fast?", side: "left" },
   { text: "Super fast ⚡ and smooth", side: "right" },
-  { text: "Looks really nice 👀", side: "left" },
-  { text: "Yeah, modern UI and secure 🔒", side: "right" }
+  { text: "Looks really cool 👀", side: "left" },
+  { text: "Secure and beautiful 🔒", side: "right" }
 ];
 
 const chat = document.getElementById("chat");
