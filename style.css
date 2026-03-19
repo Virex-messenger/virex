@@ -279,7 +279,26 @@ html {
   gap: 15px; /* расстояние между кнопками */
 }
 
-.big-download, .secondary {
-  width: 260px; /* одинаковая ширина */
+.big-download {
+  width: 300px;
   text-align: center;
+  padding: 18px 0;
+  border-radius: 18px;
+  background: linear-gradient(90deg, orange, purple);
+  color: white;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(255,120,0,0.8);
+}
+
+/* меньше в 1.2 раза */
+.secondary {
+  width: 250px; /* 300 / 1.2 ≈ 250 */
+  text-align: center;
+  padding: 14px 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  display: block;
+  margin: 12px auto 0 auto;
 }
