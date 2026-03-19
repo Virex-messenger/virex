@@ -263,7 +263,7 @@ html {
 
 /* меньше в 1.2 раза */
 .secondary {
-  width: 250px; /* 300 / 1.2 ≈ 250 */
+  width: 230px; /* 300 / 1.2 ≈ 250 */
   text-align: center;
   padding: 14px 0;
   border-radius: 14px;
