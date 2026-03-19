@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virex</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Gradient background animation */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, orange, purple);
+  animation: move 10s infinite alternate;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+@keyframes move {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-50px,-50px); }
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+nav a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: orange;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 0;
+  background: linear-gradient(90deg, orange, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  max-width: 500px;
+  opacity: 0.8;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 15px 25px;
+  margin: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(90deg, orange, purple);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* Sections */
+section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="logo">
+    <strong>Virex</strong>
+  </div>
+
+  <nav>
+    <a href="#download">Download</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Virex</h1>
+  <p>Fast, secure and modern messenger for everyone</p>
+
+  <div class="buttons">
+    <a href="#" class="btn">Download APK</a>
+    <a href="#" class="btn">Open Web Version</a>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About</h2>
+  <p>Virex is a next-generation messenger with speed, privacy and modern design.</p>
+</section>
+
+<section id="download">
+  <h2>Download</h2>
+  <a href="#" class="btn">Download APK</a>
+</section>
+
+</body>
+</html>
