@@ -1,1 +1,134 @@
+* { margin:0; padding:0; box-sizing:border-box; }
 
+body {
+  font-family: 'Inter', sans-serif;
+  background: #050505;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+.header {
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+  position:fixed;
+  width:100%;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+}
+
+/* HERO */
+.hero {
+  height:100vh;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
+
+/* TEXT */
+h1 {
+  font-size:80px;
+  background: linear-gradient(90deg, orange, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* BUTTONS */
+.big-download {
+  padding:20px 50px;
+  border-radius:20px;
+  background: linear-gradient(90deg, orange, purple);
+  text-decoration:none;
+  color:white;
+  display:inline-block;
+  margin-top:20px;
+  box-shadow:0 0 40px rgba(255,120,0,0.8);
+  transition:0.3s;
+}
+
+.big-download:hover {
+  transform:scale(1.1);
+}
+
+/* SECONDARY */
+.secondary {
+  margin-left:10px;
+  border:1px solid #333;
+  padding:14px 25px;
+  border-radius:12px;
+  text-decoration:none;
+  color:white;
+}
+
+/* PHONE */
+.phone {
+  width:260px;
+  height:520px;
+  background:#111;
+  border-radius:40px;
+  padding:10px;
+}
+
+.screen {
+  width:100%;
+  height:100%;
+  border-radius:30px;
+  background:#000;
+  padding:15px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* CHAT */
+.msg {
+  padding:10px;
+  border-radius:12px;
+  max-width:70%;
+  animation:fade 0.5s;
+}
+
+.left { background:#222; align-self:flex-start; }
+.right { background:linear-gradient(90deg, orange, purple); align-self:flex-end; }
+
+@keyframes fade {
+  from {opacity:0; transform:translateY(10px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* CARDS */
+.cards {
+  display:flex;
+  gap:30px;
+  justify-content:center;
+}
+
+.card {
+  background:#111;
+  padding:30px;
+  border-radius:16px;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-10px);
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s;
+}
+
+.reveal.active {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* SECTION */
+.section {
+  padding:120px 20px;
+  text-align:center;
+}
