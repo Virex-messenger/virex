@@ -1,42 +1,4 @@
 <!DOCTYPE html>
-    <h2>Virex</h2>
-    <button class="nav-btn">Скачать</button>
-  </nav>
-
-  <div class="hero-content">
-    <h1 class="fade">Virex</h1>
-    <p class="fade delay">Мессенджер нового поколения</p>
-    <button class="cta fade delay2">Скачать APK</button>
-  </div>
-
-  <div class="phone fade delay2">
-    <div class="screen">
-      <div class="msg">Привет 👋</div>
-      <div class="msg me">Это Virex</div>
-      <div class="msg">Будущее уже здесь 🚀</div>
-    </div>
-  </div>
-</header>
-
-<section class="stats">
-  <div>⚡ Быстро</div>
-  <div>🔒 Безопасно</div>
-  <div>🌍 Везде</div>
-</section>
-
-<section class="features">
-  <h2 class="fade">Почему Virex?</h2>
-  <div class="grid">
-    <div class="card fade">🔒 Шифрование</div>
-    <div class="card fade">⚡ Мгновенные сообщения</div>
-    <div class="card fade">📞 Звонки HD</div>
-    <div class="card fade">📎 Файлы</div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <h2 class="fade">Начни использовать Virex</h2>
-  <button class="big glow-btn fade delay">Скачать сейчас</button>
 </section>
 
 <footer>
@@ -44,7 +6,14 @@
 </footer>
 
 <script>
-// scroll animation
+// SCROLL PHONE ANIMATION
+window.addEventListener('scroll', () => {
+  const phone = document.getElementById('phone');
+  const scroll = window.scrollY;
+  phone.style.transform = `translateY(${scroll * -0.2}px) rotate(${scroll * 0.05}deg)`;
+});
+
+// FADE
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting) e.target.classList.add('show');
@@ -53,12 +22,37 @@ const obs = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 
-// parallax
-window.addEventListener('mousemove', e => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 25;
-  const y = (e.clientY / window.innerHeight - 0.5) * 25;
-  document.querySelector('.phone').style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
-});
+// PARTICLE BACKGROUND
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+for(let i=0;i<60;i++){
+  particles.push({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    r: Math.random()*2,
+    dx: Math.random()-0.5,
+    dy: Math.random()-0.5
+  });
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    p.x+=p.dx;
+    p.y+=p.dy;
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle='rgba(255,255,255,0.5)';
+    ctx.fill();
+  });
+  requestAnimationFrame(animate);
+}
+animate();
 </script>
 
 </body>
