@@ -1,66 +1,102 @@
 <!DOCTYPE html>
-      <a href="#about">О нас</a>
-    </div>
-  </nav>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Virex</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="hero-content">
-    <h1 class="reveal">Будущее общения</h1>
-    <p class="reveal delay">Скорость. Безопасность. Стиль.</p>
-    <button class="cta reveal delay2">Скачать</button>
-  </div>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #050507;
+  color: white;
+}
 
-  <!-- PHONE MOCKUP -->
-  <div class="phone reveal">
+/* HERO */
+.hero {
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(135deg, #ff7a18, #7b2ff7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  background: black;
+  color: white;
+}
+
+/* PHONE */
+.phone {
+  width: 200px;
+  height: 400px;
+  margin: 30px auto;
+  background: #111;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.screen {
+  background: #0b141a;
+  height: 100%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.msg {
+  background: #202c33;
+  padding: 8px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.me {
+  background: #005c4b;
+}
+
+/* FEATURES */
+.features {
+  padding: 60px;
+  text-align: center;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="hero">
+  <h1>Virex</h1>
+  <p>Мессенджер будущего</p>
+  <button>Скачать</button>
+
+  <div class="phone">
     <div class="screen">
-      <div class="chat">
-        <div class="msg">Привет 👋</div>
-        <div class="msg me">Привет! Это Virex</div>
-        <div class="msg">Выглядит круто 😎</div>
-      </div>
+      <div class="msg">Привет</div>
+      <div class="msg me">Это Virex</div>
     </div>
   </div>
+</div>
 
-</header>
-
-<section id="features" class="features">
-  <h2 class="reveal">Почему Virex?</h2>
-
-  <div class="grid">
-    <div class="card reveal">🔒 Приватность</div>
-    <div class="card reveal">⚡ Скорость</div>
-    <div class="card reveal">🌍 Везде</div>
-    <div class="card reveal">📞 Звонки</div>
-  </div>
-</section>
-
-<section id="about" class="about">
-  <h2 class="reveal">О продукте</h2>
-  <p class="reveal delay">
-    Virex — премиальный мессенджер нового поколения.
-  </p>
-</section>
-
-<section class="cta-section">
-  <h2 class="reveal">Попробуй сейчас</h2>
-  <button class="big reveal delay">Скачать APK</button>
-</section>
-
-<footer>
-  <p>© 2026 Virex</p>
-</footer>
-
-<script>
-// SCROLL ANIMATION
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-});
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+<div class="features">
+  <div class="card">🔒 Безопасность</div>
+  <div class="card">⚡ Скорость</div>
+</div>
 
 </body>
 </html>
