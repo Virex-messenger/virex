@@ -1,45 +1,10 @@
 body {
-}
-
-.phone {
-  z-index: 2;
-  width: 240px;
-  height: 480px;
-  margin-top: 40px;
-  border-radius: 30px;
-  background: #111;
-  padding: 10px;
-  box-shadow: 0 0 60px rgba(123,47,247,0.8);
-  transition: transform 0.2s;
-}
-
-.screen {
-  background: #0b141a;
-  height: 100%;
-  border-radius: 20px;
-  padding: 10px;
-}
-
-.msg {
-  background: #202c33;
-  padding: 8px;
-  border-radius: 10px;
-  margin: 5px;
-}
-
 .msg.me {
   background: #005c4b;
 }
 
-.stats {
-  display: flex;
-  justify-content: space-around;
-  padding: 40px;
-  background: #0a0a0f;
-}
-
 .features {
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
 }
 
@@ -56,25 +21,6 @@ body {
   border-radius: 20px;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(15px);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.05);
-}
-
-.cta-section {
-  padding: 120px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #7b2ff7, #ff7a18);
-}
-
-.glow-btn {
-  box-shadow: 0 0 20px rgba(255,122,24,0.8);
-}
-
-.big {
-  padding: 18px 40px;
 }
 
 .fade {
@@ -88,11 +34,9 @@ body {
   transform: translateY(0);
 }
 
-.delay { transition-delay: 0.3s; }
-.delay2 { transition-delay: 0.6s; }
-
 footer {
   padding: 30px;
   text-align: center;
   opacity: 0.5;
 }
+
