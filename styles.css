@@ -1,46 +1,43 @@
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #050507;
-  color: white;
+.nav a:hover {
+  opacity: 1;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(135deg, #ff7a18, #7b2ff7);
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content h1 {
+  font-size: 70px;
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 22px;
+  margin: 20px 0;
 }
 
 .glow {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   background: radial-gradient(circle, rgba(255,122,24,0.4), transparent);
-  filter: blur(100px);
+  filter: blur(120px);
 }
 
-/* TEXT */
-h1 {
-  font-size: 60px;
-  margin: 0;
-}
-
-p {
-  font-size: 20px;
-}
-
-/* BUTTON */
+/* BUTTONS */
 button {
-  margin-top: 20px;
   padding: 15px 30px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   background: black;
   color: white;
   cursor: pointer;
@@ -48,30 +45,65 @@ button {
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255,122,24,0.7);
+}
+
+.big {
+  font-size: 18px;
+  padding: 18px 40px;
 }
 
 /* FEATURES */
 .features {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 400px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  max-width: 900px;
   margin: auto;
 }
 
 .card {
-  padding: 20px;
-  background: #111;
-  border-radius: 15px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  border-color: #ff7a18;
+}
+
+/* ABOUT */
+.about {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.about p {
+  max-width: 600px;
+  margin: auto;
+  opacity: 0.8;
+}
+
+/* CTA */
+.cta-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #7b2ff7, #ff7a18);
+}
+
+/* FOOTER */
+footer {
+  padding: 30px;
+  text-align: center;
+  opacity: 0.5;
 }
