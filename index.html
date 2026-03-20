@@ -1,44 +1,51 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<title>Virex</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-
-<header class="hero">
-  <div class="bg"></div>
-
-  <div class="hero-content">
-    <h1>Virex</h1>
-    <p>Будущее общения</p>
-    <button>Скачать</button>
+>Скачать</button>
   </div>
 
-  <div class="phone">
+  <div class="phone fade delay2">
     <div class="screen">
       <div class="msg">Привет 👋</div>
       <div class="msg me">Это Virex</div>
-      <div class="msg">Круто выглядит 🔥</div>
+      <div class="msg">Добро пожаловать 🚀</div>
     </div>
   </div>
 </header>
 
 <section class="features">
-  <h2>Почему Virex?</h2>
+  <h2 class="fade">Почему Virex?</h2>
   <div class="grid">
-    <div class="card">🔒 Безопасность</div>
-    <div class="card">⚡ Скорость</div>
-    <div class="card">💬 Удобство</div>
-    <div class="card">📞 Звонки</div>
+    <div class="card fade">🔒 Приватность</div>
+    <div class="card fade">⚡ Мгновенные сообщения</div>
+    <div class="card fade">🌍 Работает везде</div>
+    <div class="card fade">📞 Звонки HD</div>
   </div>
+</section>
+
+<section class="cta-section">
+  <h2 class="fade">Скачай и начни прямо сейчас</h2>
+  <button class="big fade delay">Скачать APK</button>
 </section>
 
 <footer>
   <p>© 2026 Virex</p>
 </footer>
+
+<script>
+// scroll animation
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('show');
+  });
+});
+
+document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+// parallax effect
+window.addEventListener('mousemove', e => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  document.querySelector('.phone').style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+});
+</script>
 
 </body>
 </html>
