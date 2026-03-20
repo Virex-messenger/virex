@@ -252,3 +252,11 @@ html {
 body {
   overflow-x: hidden;
 }
+
+/* НИЖНЯЯ КНОПКА (фикс) */
+.small {
+  width: auto;
+  padding: 16px 35px;
+  margin: 20px auto;
+  display: inline-block;
+}
