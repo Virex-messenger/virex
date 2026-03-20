@@ -1,4 +1,63 @@
 body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+h1 {
+  font-size: 72px;
+}
+
+.cta {
+  padding: 15px 35px;
+  border-radius: 12px;
+  background: linear-gradient(135deg,#ff7a18,#7b2ff7);
+  border: none;
+  color: white;
+  box-shadow: 0 0 20px rgba(123,47,247,0.8);
+}
+
+.phone {
+  width: 240px;
+  height: 480px;
+  margin-top: 40px;
+  border-radius: 30px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(20px);
+  padding: 10px;
+  box-shadow: 0 0 60px rgba(123,47,247,0.8);
+  transition: transform 0.2s;
+}
+
+.screen {
+  background: #0b141a;
+  height: 100%;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.msg {
+  background: #202c33;
+  padding: 8px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
 .msg.me {
   background: #005c4b;
 }
@@ -39,4 +98,3 @@ footer {
   text-align: center;
   opacity: 0.5;
 }
-
