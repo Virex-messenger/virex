@@ -1,28 +1,22 @@
 body {
 }
 
-.cta:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 30px rgba(255,122,24,0.8);
-}
-
 .phone {
   z-index: 2;
-  width: 230px;
-  height: 460px;
+  width: 240px;
+  height: 480px;
   margin-top: 40px;
   border-radius: 30px;
   background: #111;
   padding: 10px;
-  box-shadow: 0 0 50px rgba(123,47,247,0.7);
+  box-shadow: 0 0 60px rgba(123,47,247,0.8);
   transition: transform 0.2s;
 }
 
 .screen {
-  width: 100%;
+  background: #0b141a;
   height: 100%;
   border-radius: 20px;
-  background: #0b141a;
   padding: 10px;
 }
 
@@ -35,7 +29,13 @@ body {
 
 .msg.me {
   background: #005c4b;
-  align-self: flex-end;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+  background: #0a0a0f;
 }
 
 .features {
@@ -64,16 +64,19 @@ body {
 }
 
 .cta-section {
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
   background: linear-gradient(135deg, #7b2ff7, #ff7a18);
+}
+
+.glow-btn {
+  box-shadow: 0 0 20px rgba(255,122,24,0.8);
 }
 
 .big {
   padding: 18px 40px;
 }
 
-/* animations */
 .fade {
   opacity: 0;
   transform: translateY(40px);
