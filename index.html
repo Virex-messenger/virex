@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -10,11 +11,20 @@
 
 <canvas id="bg-canvas"></canvas>
 
+<nav class="nav">
+  <h2>Virex</h2>
+  <div>
+    <a href="#features">Функции</a>
+    <a href="#download">Скачать</a>
+    <button onclick="toggleTheme()">🌙</button>
+  </div>
+</nav>
+
 <header class="hero">
   <div class="hero-content">
     <h1 class="fade">Virex</h1>
     <p class="fade delay">Мессенджер нового поколения</p>
-    <button class="cta fade delay2">Скачать APK</button>
+    <button class="cta fade delay2" onclick="download()">Скачать APK</button>
   </div>
 
   <div class="phone fade" id="phone">
@@ -26,7 +36,7 @@
   </div>
 </header>
 
-<section class="features">
+<section id="features" class="features">
   <h2 class="fade">Почему Virex?</h2>
   <div class="grid">
     <div class="card fade">🔒 Шифрование</div>
@@ -36,12 +46,28 @@
   </div>
 </section>
 
+<section id="download" class="download">
+  <h2>Скачать приложение</h2>
+  <p>Версия для Android доступна сейчас</p>
+  <button onclick="download()">Скачать APK</button>
+</section>
+
 <footer>
   <p>© 2026 Virex</p>
 </footer>
 
 <script>
-// SCROLL PHONE ANIMATION
+// DOWNLOAD
+function download() {
+  window.location.href = "https://example.com/virex.apk";
+}
+
+// THEME SWITCH
+function toggleTheme() {
+  document.body.classList.toggle('light');
+}
+
+// SCROLL PHONE
 window.addEventListener('scroll', () => {
   const phone = document.getElementById('phone');
   const scroll = window.scrollY;
@@ -57,7 +83,7 @@ const obs = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 
-// PARTICLE BACKGROUND
+// PARTICLES
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -79,7 +105,6 @@ function animate(){
   particles.forEach(p=>{
     p.x+=p.dx;
     p.y+=p.dy;
-
     ctx.beginPath();
     ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
     ctx.fillStyle='rgba(255,255,255,0.5)';
