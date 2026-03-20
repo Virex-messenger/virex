@@ -1,4 +1,13 @@
+
 body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #050507;
+  color: white;
+  overflow-x: hidden;
+}
+
+#bg-canvas {
   position: fixed;
   top: 0;
   left: 0;
