@@ -1,76 +1,78 @@
 body {
-  font-weight: bold;
-}
-
-.hero p {
-  font-size: 22px;
   margin: 20px 0;
-  opacity: 0.9;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(80px);
-  opacity: 0.2;
-}
-
-button {
-  padding: 15px 35px;
-  font-size: 16px;
-  border: none;
+.cta {
+  padding: 15px 40px;
   border-radius: 12px;
+  border: none;
   background: black;
   color: white;
+  font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-button:hover {
-  transform: scale(1.05);
-  background: #111;
+.cta:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255,122,24,0.6);
 }
 
 /* FEATURES */
 .features {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
-}
-
-.features h2 {
-  margin-bottom: 40px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
 }
 
 .card {
+  padding: 30px;
+  border-radius: 20px;
   background: rgba(255,255,255,0.05);
-  padding: 25px;
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   border: 1px solid rgba(255,255,255,0.1);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: #7b2ff7;
+  transform: translateY(-10px) scale(1.03);
+  border-color: #ff7a18;
+}
+
+/* PHONE PREVIEW */
+.preview {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.phone {
+  width: 220px;
+  height: 450px;
+  margin: 40px auto;
+  border-radius: 30px;
+  background: #111;
+  padding: 10px;
+  box-shadow: 0 0 40px rgba(123,47,247,0.5);
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ff7a18, #7b2ff7);
 }
 
 /* ABOUT */
 .about {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
-  background: linear-gradient(180deg, #0a0a0f, #111);
 }
 
 .about p {
@@ -83,7 +85,22 @@ button:hover {
 footer {
   padding: 30px;
   text-align: center;
-  background: #050507;
-  font-size: 14px;
-  opacity: 0.6;
+  opacity: 0.5;
+}
+
+/* ANIMATIONS */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s forwards;
+}
+
+.delay { animation-delay: 0.5s; }
+.delay2 { animation-delay: 1s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
