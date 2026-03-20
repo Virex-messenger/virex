@@ -1,49 +1,22 @@
-// CHAT
-const messages = [
-  {text:"Hey 👋", side:"left"},
-  {text:"Welcome to Virex 🚀", side:"right"},
-  {text:"Is it fast?", side:"left"},
-  {text:"Super fast ⚡", side:"right"},
-  {text:"Looks amazing 👀", side:"left"},
-  {text:"Secure 🔒", side:"right"}
-];
+// Плавная прокрутка
 
-const chat = document.getElementById("chat");
-
-let i = 0;
-
-function showMessage() {
-  if (i >= messages.length) return;
-
-  const msg = document.createElement("div");
-  msg.className = "msg " + messages[i].side;
-  msg.innerText = messages[i].text;
-
-  chat.appendChild(msg);
-
-  i++;
-  setTimeout(showMessage, 800);
-}
-
-showMessage();
-
-// SCROLL ANIMATION
-const reveals = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("active");
-    }
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 });
 
-// PARALLAX PHONE
-const phone = document.getElementById("phone");
+// Анимация появления
 
-document.addEventListener("mousemove", (e) => {
-  let x = (window.innerWidth/2 - e.clientX) / 30;
-  let y = (window.innerHeight/2 - e.clientY) / 30;
-  phone.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.card').forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      card.style.opacity = 1;
+      card.style.transform = 'translateY(0)';
+    }
+  });
 });
