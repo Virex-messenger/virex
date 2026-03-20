@@ -1,28 +1,42 @@
->Скачать</button>
+<!DOCTYPE html>
+    <h2>Virex</h2>
+    <button class="nav-btn">Скачать</button>
+  </nav>
+
+  <div class="hero-content">
+    <h1 class="fade">Virex</h1>
+    <p class="fade delay">Мессенджер нового поколения</p>
+    <button class="cta fade delay2">Скачать APK</button>
   </div>
 
   <div class="phone fade delay2">
     <div class="screen">
       <div class="msg">Привет 👋</div>
       <div class="msg me">Это Virex</div>
-      <div class="msg">Добро пожаловать 🚀</div>
+      <div class="msg">Будущее уже здесь 🚀</div>
     </div>
   </div>
 </header>
 
+<section class="stats">
+  <div>⚡ Быстро</div>
+  <div>🔒 Безопасно</div>
+  <div>🌍 Везде</div>
+</section>
+
 <section class="features">
   <h2 class="fade">Почему Virex?</h2>
   <div class="grid">
-    <div class="card fade">🔒 Приватность</div>
+    <div class="card fade">🔒 Шифрование</div>
     <div class="card fade">⚡ Мгновенные сообщения</div>
-    <div class="card fade">🌍 Работает везде</div>
     <div class="card fade">📞 Звонки HD</div>
+    <div class="card fade">📎 Файлы</div>
   </div>
 </section>
 
 <section class="cta-section">
-  <h2 class="fade">Скачай и начни прямо сейчас</h2>
-  <button class="big fade delay">Скачать APK</button>
+  <h2 class="fade">Начни использовать Virex</h2>
+  <button class="big glow-btn fade delay">Скачать сейчас</button>
 </section>
 
 <footer>
@@ -39,10 +53,10 @@ const obs = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 
-// parallax effect
+// parallax
 window.addEventListener('mousemove', e => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 20;
-  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  const x = (e.clientX / window.innerWidth - 0.5) * 25;
+  const y = (e.clientY / window.innerHeight - 0.5) * 25;
   document.querySelector('.phone').style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
 });
 </script>
