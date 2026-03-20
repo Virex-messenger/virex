@@ -10,8 +10,8 @@ body {
 /* BACKGROUND */
 .bg {
   position:fixed;
-  width:100%;
-  height:100%;
+  width:200%;
+  height:200%;
   background:linear-gradient(120deg, orange, purple, orange);
   animation:move 12s infinite alternate;
   opacity:0.15;
