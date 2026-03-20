@@ -9,7 +9,7 @@
 <body>
 
 <header class="hero">
-  <div class="glow"></div>
+  <div class="bg-anim"></div>
 
   <nav class="nav">
     <h2>Virex</h2>
@@ -20,39 +20,51 @@
   </nav>
 
   <div class="hero-content">
-    <h1>Будущее общения</h1>
-    <p>Скорость. Безопасность. Стиль.</p>
-    <button>Скачать для Android</button>
+    <h1 class="reveal">Будущее общения</h1>
+    <p class="reveal delay">Скорость. Безопасность. Стиль.</p>
+    <button class="cta reveal delay2">Скачать</button>
   </div>
 </header>
 
 <section id="features" class="features">
-  <h2>Почему Virex?</h2>
+  <h2 class="reveal">Почему Virex?</h2>
 
   <div class="grid">
-    <div class="card">🔒 Приватность</div>
-    <div class="card">⚡ Мгновенные сообщения</div>
-    <div class="card">🌍 Работает везде</div>
-    <div class="card">📞 Кристально чистые звонки</div>
+    <div class="card reveal">🔒 Приватность</div>
+    <div class="card reveal">⚡ Скорость</div>
+    <div class="card reveal">🌍 Везде</div>
+    <div class="card reveal">📞 Звонки</div>
   </div>
 </section>
 
 <section id="about" class="about">
-  <h2>О продукте</h2>
-  <p>
-    Virex — это новый стандарт общения. Минимализм, скорость и
-    премиальный дизайн объединены в одном приложении.
+  <h2 class="reveal">О продукте</h2>
+  <p class="reveal delay">
+    Virex — премиальный мессенджер нового поколения.
   </p>
 </section>
 
 <section class="cta-section">
-  <h2>Готов попробовать?</h2>
-  <button class="big">Скачать сейчас</button>
+  <h2 class="reveal">Попробуй сейчас</h2>
+  <button class="big reveal delay">Скачать APK</button>
 </section>
 
 <footer>
   <p>© 2026 Virex</p>
 </footer>
+
+<script>
+// SCROLL ANIMATION
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
